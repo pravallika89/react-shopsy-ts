@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalContext';
 import SingleProductCard from '../components/SingleProductCard';
 const ProductPage = () => {
-  const { product, getSingleProduct } = useContext(GlobalContext);
+  const { product, getSingleProduct, priceRound} = useContext(GlobalContext);
   const { productId } = useParams<{ productId: string }>();
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const ProductPage = () => {
       </div>
 
       {/* Product Card */}
-      <SingleProductCard product={product}/>
+      <SingleProductCard product={product}priceRound={priceRound}/>
      </div>
   );
 };

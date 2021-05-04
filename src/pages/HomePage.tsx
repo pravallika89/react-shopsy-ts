@@ -3,13 +3,14 @@ import ProductCard from '../components/ProductCard';
 import { GlobalContext } from '../context/GlobalContext';
 import '../App.css';
 
+
 const HomePage = () => {
-  const { products, getProducts } = useContext(GlobalContext);
+  const { products, getProducts,priceRound } = useContext(GlobalContext);
 
   useEffect(() => {
     getProducts();
   }, []);
-
+ 
   return (
     <div id='home'>
       <div className='row text-center'>
@@ -22,7 +23,7 @@ const HomePage = () => {
         {products.map((product, i) => {
           return (
             <div className='col-sm-12 col-md-3 mb-3' key={i}>
-              <ProductCard product={product} />
+              <ProductCard product={product} priceRound={priceRound}/>
             </div>
           );
         })}
