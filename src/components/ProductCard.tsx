@@ -25,7 +25,7 @@ const ProductCard: React.FC<CardProps> = ({ product,priceRound }) => {
         <div className='card-body'>
           <h5 className='card-title'>
             <Link to={`/products/${product.id}`}>{product.title}</Link>
-          </h5>
+          </h5> 
           <div className='d-flex justify-content-between align-items-center'>
             <strong>${priceRound(product.price)}</strong>
             <span 
