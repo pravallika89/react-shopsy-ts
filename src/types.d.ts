@@ -16,6 +16,8 @@ type Product = {
     category: string;
     description: string;
     image: string;
+    
+    
 }
 
 // Define a state type
@@ -25,4 +27,5 @@ type InitialStateType = {
     product: Product | undefined;
     getProducts: () => void;
     getSingleProduct: (productId:number) => void;
+    priceRound:(price:string)=>void;
 };

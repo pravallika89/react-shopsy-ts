@@ -8,6 +8,7 @@ const initialState = {
   product: undefined,
   getProducts: () => {},
   getSingleProduct: () => {},
+  priceRound:()=>{} ,
 };
 
 // Create our global reducer
@@ -64,6 +65,11 @@ export const GlobalProvider: React.FC = ({ children }) => {
       console.log(e);
     }
   };
+ 
+  const priceRound=(price:string)=> {
+    var roundedPrice = parseFloat(price).toFixed(2);
+    return roundedPrice;
+}
 
   return (
     <GlobalContext.Provider
@@ -73,6 +79,7 @@ export const GlobalProvider: React.FC = ({ children }) => {
         product: state.product,
         getProducts,
         getSingleProduct,
+        priceRound,
       }}>
       {children} {/* <AppRouter/> */}
     </GlobalContext.Provider>

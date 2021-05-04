@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 interface SingleProductCardProps {
   product: Product;
+  priceRound:(price:string)=>void;
 }
-const SingleProductCard:React.FC<SingleProductCardProps>=({product})=>{
+const SingleProductCard:React.FC<SingleProductCardProps>=({product,priceRound})=>{
   return(
     <div id='single-product'>     
       {/* Product Card */}
@@ -27,7 +28,7 @@ const SingleProductCard:React.FC<SingleProductCardProps>=({product})=>{
                   <h3 className='card-title'>
                     {product.title}
                     <div className=''>
-                      <small className='text-info'>${product.price}</small>
+                      <small className='text-info'>${priceRound(product.price)}</small>
                     </div>
                   </h3>
                   {/* product details */}
